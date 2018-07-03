@@ -1,34 +1,42 @@
+#!/usr/bin/python3
+
 import os
 import binascii
 import data
 
 
-def runSytem():
-    path = 'D:\MODMIES\K0T3Z4\TESTING FOLDER'
+# Run program
+def run_program():
+    path = 'D:\MODMIES\MeowRealFile\TESTING FOLDER'
 
     #
     for root, directories, filenames in os.walk(path):
         for filename in filenames:
             fileLink = os.path.join(root, filename)
-            print(filename)
-            fileSign = readFile(fileLink)
-            checkTheSign(fileSign)
-
-            for data_Header in data.data_Header_And_Extension:
-                if "b'" + data_Header['header'] + "'" == str(binascii.hexlify(fileSign)):
-                    print(data_Header['extension'])
+            print(fileLink)
+            newFileName = check_the_sign(readFile(fileLink), fileLink)
+            print(newFileName)
+            re_extension(fileLink, newFileName)
 
 
-def checkTheSign(fileSign):
+# Modify file extension
+def re_extension(fileLink, newExtension):
+    os.rename(fileLink, newExtension)
+
+
+# Check signature of file
+def check_the_sign(fileSign, fileLink):
     for data_Header in data.data_Header_And_Extension:
-        if "b'" + data_Header['header'] + "'" == str(fileSign):
-            print(data_Header['extension'])
+        if data_Header['header'] == str(fileSign):
+            newFileName = fileLink + '.' + data_Header['extension']
+            return newFileName
 
 
+# Read file with hex output and get 4 byte of file
 def readFile(fileLink):
-    fileSign = open(fileLink, 'rb').read()[:6]
+    fileSign = binascii.hexlify(open(fileLink, 'rb').read()).decode('utf-8').upper()[:8]
     return fileSign
 
 
 if __name__ == '__main__':
-    runSytem()
+    run_program()

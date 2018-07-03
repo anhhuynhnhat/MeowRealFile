@@ -6,7 +6,7 @@ data_Header_And_Extension = \
             "extension" : "exe"
         },
         {
-            "header": "89504E470D0A1A0A",
-            "extension": "pdf"
+            "header": "89504E47",
+            "extension": "png"
         }
     ]
