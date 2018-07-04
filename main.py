@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import shutil
+from shutil import move, copyfile
 import os
 import binascii
 import data
@@ -65,10 +65,12 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path):
 
 # Modify file extension
 def handling(option, fileLink, newFileLink):
-    if (option != '1'):
+    if (option == '1'):
         os.rename(fileLink, newFileLink)
-    else:
-        shutil.move(fileLink, newFileLink)
+    elif (option == '2'):
+        move(fileLink, newFileLink)
+    elif (option == '3'):
+        copyfile(fileLink, newFileLink)
 
 
 # Check signature of file
