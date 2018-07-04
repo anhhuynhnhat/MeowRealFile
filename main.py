@@ -7,16 +7,36 @@ import data
 
 # Run program
 def run_program():
-    path = 'D:\MODMIES\MeowRealFile\TESTING FOLDER'
-
+    src_path = 'D:\MODMIES\MeowRealFile\TESTING FOLDER'
+    dst_path = 'D:\MODMIES\MeowRealFile\DST FOLDER'
     #
-    for root, directories, filenames in os.walk(path):
+    for root, directories, filenames in os.walk(src_path):
         for filename in filenames:
             fileLink = os.path.join(root, filename)
             print(fileLink)
             newFileName = check_the_sign(readFile(fileLink), fileLink)
             print(newFileName)
             re_extension(fileLink, newFileName)
+
+# Menu program
+def menu_program():
+    choice = '0'
+    while choice == '0':
+        print('----- WELCOME TO MEOW-REAL-FILE -----')
+        print('Source please: ')
+        print('Destination please: ')
+        print('CHOOSE OPTION:')
+        print('1. Cut file')
+        print('2. Copy file')
+
+        choice = input('OPTION: ')
+
+        if (choice == '1'):
+            print('FIRST')
+        elif (choice == '2'):
+            print('SECOND')
+        else:
+            print('DO NOT UNDERSTAND')
 
 
 # Modify file extension
