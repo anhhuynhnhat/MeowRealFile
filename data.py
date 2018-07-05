@@ -1,13 +1,9 @@
-# Filedataheaderandextension
+# File data header and extension
 data_Header_And_Extension = \
     [
         {
             "header": "00001A00051004",
             "extension": "123"
-        },
-        {
-            "header": "4D5A",
-            "extension": "386"
         },
         {
             "header": "0000001466747970",
@@ -49,50 +45,7 @@ data_Header_And_Extension = \
             "header": "414F4C4442",
             "extension": "ABY"
         },
-        {
-            "header": "414F4C",
-            "extension": "ABY"
-        },
-        {
-            "header": "72696666",
-            "extension": "AC"
-        },
-        {
-            "header": "000100005374616E6461726420414345204442",
-            "extension": "ACCDB"
-        },
-        {
-            "header": "4D5A",
-            "extension": "ACM"
-        },
-        {
-            "header": "C3ABCDAB",
-            "extension": "ACS"
-        },
-        {
-            "header": "D0CF11E0A1B11AE1",
-            "extension": "AC_"
-        },
-        {
-            "header": "5245564E554D3A2C",
-            "extension": "AD"
-        },
-        {
-            "header": "444F53",
-            "extension": "ADF"
-        },
-        {
-            "header": "D0CF11E0A1B11AE1",
-            "extension": "ADP"
-        },
-        {
-            "header": "0300000041505052",
-            "extension": "ADX"
-        },
-        {
-            "header": "80000020031204",
-            "extension": "ADX"
-        },
+
         {
             "header": "464F524D00",
             "extension": "AIFF"
@@ -108,10 +61,6 @@ data_Header_And_Extension = \
         {
             "header": "52494646",
             "extension": "ANI"
-        },
-        {
-            "header": "4D5A900003000000",
-            "extension": "API"
         },
         {
             "header": "D0CF11E0A1B11AE1",
@@ -180,14 +129,6 @@ data_Header_And_Extension = \
         {
             "header": "8A0109000000E108",
             "extension": "AW"
-        },
-        {
-            "header": "4D5A900003000000",
-            "extension": "AX"
-        },
-        {
-            "header": "4D5A",
-            "extension": "AX"
         },
         {
             "header": "414F4C2046656564",
@@ -310,10 +251,6 @@ data_Header_And_Extension = \
             "extension": "COD"
         },
         {
-            "header": "4D5A",
-            "extension": "COM"
-        },
-        {
             "header": "E8",
             "extension": "COM"
         },
@@ -336,10 +273,6 @@ data_Header_And_Extension = \
         {
             "header": "FF464F4E54",
             "extension": "CPI"
-        },
-        {
-            "header": "4D5A",
-            "extension": "CPL"
         },
         {
             "header": "DCDC",
@@ -376,10 +309,6 @@ data_Header_And_Extension = \
         {
             "header": "56455253494F4E20",
             "extension": "CTL"
-        },
-        {
-            "header": "504B0304",
-            "extension": "CUIX"
         },
         {
             "header": "00000200",
@@ -574,10 +503,6 @@ data_Header_And_Extension = \
             "extension": "DOT"
         },
         {
-            "header": "4D5A",
-            "extension": "DRV"
-        },
-        {
             "header": "07",
             "extension": "DRW"
         },
@@ -686,20 +611,12 @@ data_Header_And_Extension = \
             "extension": "EXE"
         },
         {
-            "header": "25504446",
-            "extension": "FDF"
-        },
-        {
             "header": "664C614300000022",
             "extension": "FLAC"
         },
         {
             "header": "0011",
             "extension": "FLI"
-        },
-        {
-            "header": "4D5A900003000000",
-            "extension": "FLT"
         },
         {
             "header": "76323030332E3130",
@@ -713,10 +630,7 @@ data_Header_And_Extension = \
             "header": "3C4D616B65724669",
             "extension": "FM"
         },
-        {
-            "header": "4D5A",
-            "extension": "FON"
-        },
+
         {
             "header": "D20A0000",
             "extension": "FTR"
@@ -1162,10 +1076,6 @@ data_Header_And_Extension = \
             "extension": "OBJ"
         },
         {
-            "header": "4D5A",
-            "extension": "OCX"
-        },
-        {
             "header": "504B0304",
             "extension": "ODP"
         },
@@ -1188,10 +1098,6 @@ data_Header_And_Extension = \
         {
             "header": "4F67675300020000",
             "extension": "OGX"
-        },
-        {
-            "header": "4D5A",
-            "extension": "OLB"
         },
         {
             "header": "E4525C7B8CD8A74D",
@@ -1292,10 +1198,6 @@ data_Header_And_Extension = \
         {
             "header": "50350A",
             "extension": "PGM"
-        },
-        {
-            "header": "4D5A",
-            "extension": "PIF"
         },
         {
             "header": "9901",
@@ -1410,14 +1312,6 @@ data_Header_And_Extension = \
             "extension": "QSD"
         },
         {
-            "header": "4D5A",
-            "extension": "QTS"
-        },
-        {
-            "header": "4D5A",
-            "extension": "QTX"
-        },
-        {
             "header": "00004D4D585052",
             "extension": "QXD"
         },
@@ -1492,10 +1386,6 @@ data_Header_And_Extension = \
         {
             "header": "24464C3240282329",
             "extension": "SAV"
-        },
-        {
-            "header": "4D5A",
-            "extension": "SCR"
         },
         {
             "header": "534D415254445257",
@@ -1630,10 +1520,6 @@ data_Header_And_Extension = \
             "extension": "SYS"
         },
         {
-            "header": "4D5A",
-            "extension": "SYS"
-        },
-        {
             "header": "FFFFFFFF",
             "extension": "SYS"
         },
@@ -1718,10 +1604,6 @@ data_Header_And_Extension = \
             "extension": "UFA"
         },
         {
-            "header": "4D5A",
-            "extension": "VBX"
-        },
-        {
             "header": "454E545259564344",
             "extension": "VCD"
         },
@@ -1756,10 +1638,6 @@ data_Header_And_Extension = \
         {
             "header": "D0CF11E0A1B11AE1",
             "extension": "VSD"
-        },
-        {
-            "header": "4D5A",
-            "extension": "VXD"
         },
         {
             "header": "813284C18505D011",
@@ -1948,10 +1826,6 @@ data_Header_And_Extension = \
         {
             "header": "5850434F4D0A5479",
             "extension": "XPT"
-        },
-        {
-            "header": "4D5A90000300000004000000FFFF",
-            "extension": "ZAP"
         },
         {
             "header": "504B537058",

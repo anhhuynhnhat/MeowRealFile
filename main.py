@@ -75,14 +75,15 @@ def handling(option, fileLink, newFileLink):
 
 # Check signature of file
 def check_the_sign(fileSign):
+    extension_list
     for data_Header in data.data_Header_And_Extension:
-        if data_Header['header'] == str(fileSign):
+        if fileSign.find(data_Header['header']) == 0:
             return data_Header['extension']
 
 
 # Read file with hex output and get 4 byte of file
 def get_file_sign_file(fileLink):
-    fileSign = binascii.hexlify(open(fileLink, 'rb').read()).decode('utf-8').upper()[:8]
+    fileSign = binascii.hexlify(open(fileLink, 'rb').read()).decode('utf-8').upper()[:31]
     return fileSign
 
 
