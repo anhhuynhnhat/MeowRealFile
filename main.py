@@ -9,8 +9,8 @@ import data
 # Run program
 def run_program(option):
     try:
-        src_path = 'D:\MODMIES\MeowRealFile\TESTING FOLDER'
-        dst_path = 'D:\MODMIES\MeowRealFile\DST FOLDER'
+        src_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_test'
+        dst_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_source'
         TOTAL_FILE = 0
         COUNT_FILE_SUCCESS = 0
         for root, directories, filenames in os.walk(src_path):
@@ -30,7 +30,7 @@ def run_program(option):
         print("COUNT_FILE_SUCCESS/TOTAL_FILE = " + str(COUNT_FILE_SUCCESS) + " / " + str(TOTAL_FILE))
         print("-----------------------------------------------------------------------------------")
     except:
-        print("ERROR ")
+        print("ERROR")
 
 
 # Menu program
@@ -66,7 +66,7 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path):
     file_real_name_cut_extension = ""
     if len(real_file_extension) > 1:
         for file_extension in real_file_extension:
-            if file_extension in filename:
+            if file_extension.lower() in filename.lower():
                 file_new_name = file_extension
         # if file_new_name == "" :
         #   file_new_name = ""
@@ -80,7 +80,7 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path):
         file_real_name_cut_extension = fileLink_cut_extension[0]
         return file_real_name_cut_extension + '.' + file_new_name
     else:
-        return os.path.join(dst_path, filename) + '.' + real_file_extension
+        return os.path.join(dst_path, filename) + '.' + file_new_name
 
 
 # Modify file extension
@@ -91,13 +91,13 @@ def handling(option, fileLink, newFileLink):
         move(fileLink, newFileLink)
     elif (option == '3'):
         copyfile(fileLink, newFileLink)
-1
+
 
 # Check signature of file
 def check_the_sign(fileSign):
     extension_list = []
     for data_Header in data.data_Header_And_Extension:
-        if data_Header['header'] in fileSign:
+        if data_Header['header'].upper() in fileSign.upper():
             extension_list.append(data_Header['extension'])
     return extension_list
 
