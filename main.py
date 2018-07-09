@@ -6,7 +6,7 @@ import binascii
 import data
 
 sign_file_and_name_file_unk_path = 'C:\MEO_RESULT\SignUnknown'
-
+data_header_after_156_exe = '546869732070726F6772616D2063616E6E6F742062652072756E20696E20444F53206D6F6465'
 
 # valid directory
 def valid_direc(directory):
@@ -92,8 +92,8 @@ def menu_program():
 def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_path, fileSign):
     try:
         COUNT_FILE_SUCCESS = 0
-        file_new_name = ""
-        file_real_name_cut_extension = ""
+        file_new_name = ''
+        file_real_name_cut_extension = ''
         if len(real_file_extension) > 1:
             for file_extension in real_file_extension:
                 if file_extension.lower() in filename.lower():
@@ -103,10 +103,8 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_pa
         elif len(real_file_extension) == 1:
             file_new_name = real_file_extension[0]
         if file_new_name.upper() is "EXE":
-            if str(fileSign)[155:] in '':
+            if str(fileSign)[155:] in data_header_after_156_exe:
                 file_new_name = 'EXE'
-            else:
-                file_new_name = ''
         if dst_path == '-1':
             # Cut name file "."
             fileLink_cut_extension = fileLink.split(".")
