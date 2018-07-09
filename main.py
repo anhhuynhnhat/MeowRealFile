@@ -102,8 +102,8 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_pa
                     #   file_new_name = ""
         elif len(real_file_extension) == 1:
             file_new_name = real_file_extension[0]
-        if file_new_name.upper() is "EXE":
-            if str(fileSign)[155:] in data_header_after_156_exe:
+        if "EXE" in real_file_extension and file_new_name is '':
+            if data_header_after_156_exe in str(fileSign)[155:]:
                 file_new_name = 'EXE'
         if dst_path == '-1':
             # Cut name file "."
