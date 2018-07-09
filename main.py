@@ -9,8 +9,11 @@ import data
 # Run program
 def run_program(option):
     try:
-        src_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_test'
-        dst_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_source'
+        # Source file
+        src_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_source'
+        dst_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_dst'
+        unk_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_unk'
+        # --------------------------------------------------------------------------------------
         TOTAL_FILE = 0
         COUNT_FILE_SUCCESS = 0
         for root, directories, filenames in os.walk(src_path):
@@ -21,10 +24,10 @@ def run_program(option):
                 real_file_extension = check_the_sign(fileSign)
                 if (option != '1'):
                     COUNT_FILE_SUCCESS += 1
-                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, dst_path)
+                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_path)
                 else:
                     COUNT_FILE_SUCCESS += 1
-                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, '-1')
+                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, '-1', unk_path)
                 handling(option, fileLink, newFileLink)
         print("------------------------ COUNT PERSEN SUCESSFULL ----------------------------------")
         print("COUNT_FILE_SUCCESS/TOTAL_FILE = " + str(COUNT_FILE_SUCCESS) + " / " + str(TOTAL_FILE))
@@ -60,7 +63,7 @@ def menu_program():
 
 
 # Create new file link
-def make_new_file_link(fileLink, filename, real_file_extension, dst_path):
+def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_path):
     COUNT_FILE_SUCCESS = 0
     file_new_name = ""
     file_real_name_cut_extension = ""
@@ -80,7 +83,13 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path):
         file_real_name_cut_extension = fileLink_cut_extension[0]
         return file_real_name_cut_extension + '.' + file_new_name
     else:
-        return os.path.join(dst_path, filename) + '.' + file_new_name
+        if file_new_name is not "":
+            # Source file dst
+            return os.path.join(dst_path, filename) + '.' + file_new_name
+        else:
+            # Source unknow fle
+            return os.path.join(unk_path, filename)
+        
 
 
 # Modify file extension
@@ -88,7 +97,7 @@ def handling(option, fileLink, newFileLink):
     if (option == '1'):
         os.rename(fileLink, newFileLink)
     elif (option == '2'):
-        move(fileLink, newFileLink)
+        move(str(fileLink), str(newFileLink))
     elif (option == '3'):
         copyfile(fileLink, newFileLink)
 
