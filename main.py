@@ -81,7 +81,7 @@ def menu_program():
         elif (option == '2'):
             run_program(option)
 
-        elif (option == 3):
+        elif (option == '3'):
             run_program(option)
 
         else:
@@ -135,7 +135,7 @@ def handling(option, fileLink, newFileLink):
             os.rename(fileLink, newFileLink)
         elif (option == '2'):
             move(str(fileLink), str(newFileLink))
-        elif (option == 3):
+        elif (option == '3'):
             copyfile(fileLink, newFileLink)
     except Exception as e:
         print("ERROR " + str(e))
