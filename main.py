@@ -5,6 +5,9 @@ import os
 import binascii
 import data
 
+
+sign_file_and_name_file_unk_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\sign_file_and_name_file_unk'
+
 # valid directory
 def valid_direc(directory):
     return os.path.exists(directory)
@@ -27,10 +30,14 @@ def run_program(option):
         # Create new directory
         if not valid_direc(dst_path):
             os.makedirs(dst_path)
-        # Check distination path is not exit
+        # Check unk path is not exit
         # Create new directory
         if not valid_direc(unk_path):
             os.makedirs(unk_path)
+        # Check file data path is not exit
+        # Create new directory
+        if not valid_direc(sign_file_and_name_file_unk_path):
+            os.makedirs(sign_file_and_name_file_unk_path)
         # ----------------------------------------------------------------------------------------
         TOTAL_FILE = 0
         COUNT_FILE_SUCCESS = 0
@@ -106,6 +113,9 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_pa
                 # Source file dst
                 return os.path.join(dst_path, filename) + '.' + file_new_name
             else:
+                # Add data file unknow to file
+                with open(sign_file_and_name_file_unk_path + '\\result.txt', 'a') as the_file:
+                    the_file.write('File Link ' + fileLink + ' Sign ' + get_file_sign_file(fileLink) + '\r\n')
                 # Source unknow fle
                 return os.path.join(unk_path, filename)
     except Exception as e:
