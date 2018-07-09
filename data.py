@@ -29,6 +29,10 @@ data_Header_And_Extension = \
             "extension": "DLL"
         },
         {
+            "header": "4D5A9000",
+            "extension": "SCR"
+        },
+        {
             "header": "D0CF11E0",
             "extension": "EXCEL"
         },
