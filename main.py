@@ -17,9 +17,9 @@ def valid_direc(directory):
 def run_program(option):
     try:
         # Source file
-        src_path = 'D:\MeowRealFile\APT-Sample'
-        dst_path = 'D:\MeowRealFile\APT-Sample\DSTFolder'
-        unk_path = 'D:\MeowRealFile\APT-Sample\AAAUNKNOWN'
+        src_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\APT-sample'
+        dst_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\DSTFolder'
+        unk_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\UNKNOWN'
         # --------------------------------------------------------------------------------------
         if not valid_direc(src_path):
             print('SOURCE NOT FOUND')
@@ -50,10 +50,10 @@ def run_program(option):
                 real_file_extension = check_the_sign(fileSign)
                 if (option != '1'):
                     COUNT_FILE_SUCCESS += 1
-                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_path)
+                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_path, fileSign)
                 else:
                     COUNT_FILE_SUCCESS += 1
-                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, '-1', unk_path)
+                    newFileLink = make_new_file_link(fileLink, filename, real_file_extension, '-1', unk_path, fileSign)
                 handling(option, fileLink, newFileLink)
         print("------------------------ COUNT PERSEN SUCESSFULL ----------------------------------")
         print("COUNT_FILE_SUCCESS/TOTAL_FILE = " + str(COUNT_FILE_SUCCESS) + " / " + str(TOTAL_FILE))
@@ -81,15 +81,15 @@ def menu_program():
         elif (option == '2'):
             run_program(option)
 
-        elif (option == '3'):
-            print('33333')
+        elif (option == 3):
+            run_program(option)
 
         else:
             print('DO NOT UNDERSTAND')
 
 
 # Create new file link
-def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_path):
+def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_path, fileSign):
     try:
         COUNT_FILE_SUCCESS = 0
         file_new_name = ""
@@ -102,6 +102,11 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_pa
                     #   file_new_name = ""
         elif len(real_file_extension) == 1:
             file_new_name = real_file_extension[0]
+        if file_new_name.upper() is "EXE":
+            if str(fileSign)[155:] in '':
+                file_new_name = 'EXE'
+            else:
+                file_new_name = ''
         if dst_path == '-1':
             # Cut name file "."
             fileLink_cut_extension = fileLink.split(".")
@@ -130,7 +135,7 @@ def handling(option, fileLink, newFileLink):
             os.rename(fileLink, newFileLink)
         elif (option == '2'):
             move(str(fileLink), str(newFileLink))
-        elif (option == '3'):
+        elif (option == 3):
             copyfile(fileLink, newFileLink)
     except Exception as e:
         print("ERROR " + str(e))
@@ -151,7 +156,7 @@ def check_the_sign(fileSign):
 # Read file with hex output and get 4 byte of file
 def get_file_sign_file(fileLink):
     try:
-        fileSign = binascii.hexlify(open(fileLink, 'rb').read()).decode('utf-8').upper()[:31]
+        fileSign = binascii.hexlify(open(fileLink, 'rb').read()).decode('utf-8').upper()[:232]
         return fileSign
     except Exception as e:
         print("ERROR " + str(e))
