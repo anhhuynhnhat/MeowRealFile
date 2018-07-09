@@ -6,7 +6,7 @@ import binascii
 import data
 
 
-sign_file_and_name_file_unk_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\sign_file_and_name_file_unk'
+sign_file_and_name_file_unk_path = '/home/bangnx1/Desktop/MeowRealFile/sign_file_and_name_file_unk'
 
 # valid directory
 def valid_direc(directory):
@@ -16,9 +16,9 @@ def valid_direc(directory):
 def run_program(option):
     try:
         # Source file
-        src_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\APT-sample'
-        dst_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_dst'
-        unk_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_unk'
+        src_path = '/home/bangnx1/Desktop/MeowRealFile/APT-sample'
+        dst_path = '/home/bangnx1/Desktop/MeowRealFile/data_dst'
+        unk_path = '/home/bangnx1/Desktop/MeowRealFile/data_unk'
         # --------------------------------------------------------------------------------------
         if not valid_direc(src_path):
             print('SOURCE NOT FOUND')
