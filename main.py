@@ -16,7 +16,7 @@ def valid_direc(directory):
 def run_program(option):
     try:
         # Source file
-        src_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_source'
+        src_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\APT-sample'
         dst_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_dst'
         unk_path = 'C:\Users\NGUYENXUANBANG\Desktop\MeowRealFile\data_unk'
         # --------------------------------------------------------------------------------------
