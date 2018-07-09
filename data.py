@@ -13,6 +13,14 @@ data_Header_And_Extension = \
             "extension": "BMP"
         },
         {
+            "header": "7B5C727466315C",
+            "extension": "RTF"
+        },
+        {
+            "header": "435753",
+            "extension": "SWF"
+        },
+        {
             "header": "424D6225",
             "extension": "BMP"
         },
@@ -131,5 +139,13 @@ data_Header_And_Extension = \
         {
             "header": "504B030414000600",
             "extension": "DOCX"
+        },
+        {
+            "header": "D0CF11E0A1B11AE1",
+            "extension": "DOC"
+        },
+        {
+            "header": "546869732070726F6772616D2063616E6E6F742062652072756E20696E20444F53206D6F6465",
+            "extension": "EXE"
         }
     ]
