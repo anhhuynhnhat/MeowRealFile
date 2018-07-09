@@ -5,20 +5,21 @@ import os
 import binascii
 import data
 
+sign_file_and_name_file_unk_path = 'C:\MEO_RESULT\SignUnknown'
 
-sign_file_and_name_file_unk_path = '/home/bangnx1/Desktop/MeowRealFile/sign_file_and_name_file_unk'
 
 # valid directory
 def valid_direc(directory):
     return os.path.exists(directory)
 
+
 # Run program
 def run_program(option):
     try:
         # Source file
-        src_path = '/home/bangnx1/Desktop/MeowRealFile/APT-sample'
-        dst_path = '/home/bangnx1/Desktop/MeowRealFile/data_dst'
-        unk_path = '/home/bangnx1/Desktop/MeowRealFile/data_unk'
+        src_path = 'D:\MeowRealFile\APT-Sample'
+        dst_path = 'D:\MeowRealFile\APT-Sample\DSTFolder'
+        unk_path = 'D:\MeowRealFile\APT-Sample\AAAUNKNOWN'
         # --------------------------------------------------------------------------------------
         if not valid_direc(src_path):
             print('SOURCE NOT FOUND')
@@ -77,7 +78,7 @@ def menu_program():
         if (option == '1'):
             run_program(option)
 
-        elif (option == 2):
+        elif (option == '2'):
             run_program(option)
 
         elif (option == '3'):
@@ -97,8 +98,8 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_pa
             for file_extension in real_file_extension:
                 if file_extension.lower() in filename.lower():
                     file_new_name = file_extension
-            # if file_new_name == "" :
-            #   file_new_name = ""
+                    # if file_new_name == "" :
+                    #   file_new_name = ""
         elif len(real_file_extension) == 1:
             file_new_name = real_file_extension[0]
         if dst_path == '-1':
@@ -120,7 +121,6 @@ def make_new_file_link(fileLink, filename, real_file_extension, dst_path, unk_pa
                 return os.path.join(unk_path, filename)
     except Exception as e:
         print("ERROR " + str(e))
-        
 
 
 # Modify file extension
@@ -132,8 +132,9 @@ def handling(option, fileLink, newFileLink):
             move(str(fileLink), str(newFileLink))
         elif (option == '3'):
             copyfile(fileLink, newFileLink)
-    except e:
+    except Exception as e:
         print("ERROR " + str(e))
+
 
 # Check signature of file
 def check_the_sign(fileSign):
@@ -145,6 +146,7 @@ def check_the_sign(fileSign):
         return extension_list
     except Exception as e:
         print("ERROR " + str(e))
+
 
 # Read file with hex output and get 4 byte of file
 def get_file_sign_file(fileLink):
